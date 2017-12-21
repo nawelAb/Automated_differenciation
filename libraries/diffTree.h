@@ -3,7 +3,6 @@
 namespace ourlibs{
 	class diffTree{
 	private:
-		//comm
 		diffTree* diff[2];
 		values* values[2];
 		char ourOperator[3];

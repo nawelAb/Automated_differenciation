@@ -1,5 +1,5 @@
 namespace ourlibs{
-	class values{  /////lache moi
+	class values{
 	private:
 		double value;
 		double* tabvalues;
