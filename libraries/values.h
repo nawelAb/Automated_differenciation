@@ -5,9 +5,7 @@ namespace ourlibs{
 		double* tabvalues;
 	public:
 		//constructeur pour les 3 cas possibles
-		diffTree(ourlibs::diffTree,ourlibs::diffTree);
-		diffTree(ourlibs::values,ourlibs::diffTree);
-		diffTree(ourlibs::values,ourlibs::values);
+		values(double,const std::size_t,const std::size_t);
 		diffTree~();
 
 		//crée un difftree a partir de deux éléments
