@@ -3,8 +3,8 @@
 namespace ourlibs{
 	class diffTree{
 	private:
-		diffTree diff[2];
-		values values[2];
+		diffTree* diff[2];
+		values* values[2];
 		char ourOperator[3];
 	public:
 		//constructeur pour les 3 cas possibles
@@ -14,9 +14,11 @@ namespace ourlibs{
 		diffTree~();
 
 		//crée un difftree a partir de deux éléments
+		diffTree* operator*(double);
 		diffTree* operator*(ourlibs::values*);
 		diffTree* operator*(ourlibs::diffTree*);
 
+		diffTree* operator*(double);
 		diffTree* operator+(ourlibs::values*);
 		diffTree* operator+(ourlibs::diffTree*);
 
