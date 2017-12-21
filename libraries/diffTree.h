@@ -22,7 +22,7 @@ namespace ourlibs{
 
 		//fait la résolution du diff et supprime la référence vers le diff
 		//vérifie si le diff existe et le supprime après résolution
-		void replaceDiff(int,ourlibs::values)
+		void replaceDiff(int,ourlibs::values);
 
 		//résous l'arborescence du difftree pui renvois les résultats sous la
 		//forme d'un objet values (@)
