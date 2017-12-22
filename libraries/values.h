@@ -10,12 +10,12 @@ namespace ourlibs{
 
 		//crée un difftree a partir de deux éléments
 		values* operator*(double);
-		values* operator*(ourlibs::values*);
-		diffTree* operator*(ourlibs::diffTree*);
+		values* operator*(values*);
+		diffTree* operator*(diffTree*);
 
 		values* operator+(double);
-		values* operator+(ourlibs::values*);
-		diffTree* operator+(ourlibs::diffTree*);
+		values* operator+(values*);
+		diffTree* operator+(diffTree*);
 
 	};
 };
