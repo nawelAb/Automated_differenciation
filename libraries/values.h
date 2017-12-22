@@ -5,19 +5,19 @@ namespace ourlibs{
 		double* tabvalues;
 	public:
 		//constructeur pour les 3 cas possibles
-		diffTree(ourlibs::diffTree,ourlibs::diffTree);
-		diffTree(ourlibs::values,ourlibs::diffTree);
-		diffTree(ourlibs::values,ourlibs::values);
+		diffTree(diffTree,diffTree);
+		diffTree(values, diffTree);
+		diffTree(values, values);
 		diffTree~();
 
 		//crée un difftree a partir de deux éléments
 		values* operator*(double);
-		values* operator*(ourlibs::values*);
-		diffTree* operator*(ourlibs::diffTree*);
+		values* operator*(values*);
+		diffTree* operator*(diffTree*);
 
 		values* operator+(double);
-		values* operator+(ourlibs::values*);
-		diffTree* operator+(ourlibs::diffTree*);
+		values* operator+(values*);
+		diffTree* operator+(diffTree*);
 
 	};
 };
