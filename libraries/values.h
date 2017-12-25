@@ -11,6 +11,8 @@ namespace ourlibs{
 		diffTree~();
 
 		//crée un difftree a partir de deux éléments
+		// "values && values" ou "difftree && values"
+		// ou bien "difftree && double"
 		values* operator*(double);
 		values* operator*(ourlibs::values*);
 		diffTree* operator*(ourlibs::diffTree*);
