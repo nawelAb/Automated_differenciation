@@ -1,30 +1,57 @@
 #include "diffTree.h"
 #include "values.h" 
 namespace ourlibs {
-   diffTree::diffTree() 
-{   diff = new diffTree[2];
-    values = new values[2];;
-    ourOperator = ("");
-    power = 0.0;
+  
+  diffTree::diffTree() 
+{   tabdiff = nullptr;
+    tabvalues = nullptr;
+    ourOperator = "";
+    n = 0.0;
 }
 
 
-   diffTree::diffTree(const diffTree& d1, const diffTree& d2)
-{    diff[0] = d1;
-     diff[1] = d2;      
+   diffTree::diffTree(diffTree* d1, diffTree* d2, char op[4])
+{    tabdiff** tabdiff= new diffTree[2];
+     tabvalues* tabvalues = new values[2];
+     tabdiff[0] = d1;
+     tabdiff[1] = d2;
+     tabvalues[0] = NULL;
+     tabvalues[1] = NULL;
+     ourOperator = op; 
+     n = 0.0;       
 }
-   diffTree::diffTree(values val1, diffTree& d1)
-{   
-    values[0] = val1;
-    diff[0] = d1.diff;
-    ourOperator = d1.ourOperator;
+   diffTree::diffTree(values val1, diffTree* d1, char op[4])
+{    tabdiff** tabdiff= new diffTree[2];
+     tabvalues* tabvalues = new values[2];
+     tabdiff[0] = nullptr;
+     tabdiff[1] = d1;
+     tabvalues[0] = val1;
+     tabvalues[1] = NULL;
+     ourOperator = op; 
+     n = 0.0;  
 }
-  diffTree::diffTree(values val1, values val2)
-{       values[0] = val1;
-        values[1] = val2;
+  diffTree::diffTree(diffTree* d1, double s, char op[4] )
+{    tabdiff** tabdiff= new diffTree[2];
+     tabvalues* tabvalues = new values[2];
+     tabdiff[0] = nullptr;
+     tabdiff[1] = d1;
+     tabvalues[0] = NULL;
+     tabvalues[1] = NULL;
+     ourOperator = op;
+     n = s;   
+}
+  diffTree::diffTree(values* val1, double s, char op[4]  )
+{    tabdiff** tabdiff= new diffTree[2];
+     tabvalues* tabvalues = new values[2];
+     tabdiff[0] = nullptr;
+     tabdiff[1] = nullptr;
+     tabvalues[0] = val1;
+     tabvalues[1] = NULL;
+     ourOperator = op;
+     n = s;   
 }
   diffTree::diffTree~()
-{  delete[] diff;
+{  delete diff[] diff;
    delete[] values;
 }
 //crée un difftree a partir de deux éléments
@@ -32,33 +59,53 @@ namespace ourlibs {
 {      diff = d1.diff;
        values = d1.values;
        ourOperator = d1.ourOperator;
+       n = d1.n;
 }
-  diffTree& operator*(double n)
-{
+  diffTree operator*(double n)
+{    
+    diffTree branche(this,n, "mul");
+     
 }
-  diffTree& operator*(values& )
+  diffTree operator*(values* val1 )
 {
+    diffTree branche(val1, this, "mul"); 
 }
-  diffTree& operator*(diffTree*)
+  diffTree operator*(diffTree* d1)
 {
+    diffTree branche(this, d1, "mul"); 
 }
-  diffTree& operator*(double)
+  diffTree operator*(double n)
 {
+    diffTree branche(this, n, "mul"); 
 }
-  diffTree& operator+(values*)
+  diffTree operator+(values* val1)
 {
+    diffTree branche(val1, this, "add");
 }
-  diffTree& operator+(diffTree*)
+  diffTree operator+(diffTree* d1)
 {
+    diffTree branche(this, d1, "add"); 
 }
 
-  void replaceDiff(int, values)
+ /* void replaceDiff(int, values)
 {
+}
+*/
+ /* values* resolution()
+{
+  if (tabdiff[0] != nullptr)
+    tabdiff[0].resolution();
+  if (tabdiff[1] != nullptr)
+    tabdiff[1].resolution();
+
+ switch (ourOperator) :
+ case ("pow") : 
+{ values tmp(tabvalue[0].size());
+  tmp.tabvalues = tabvalue[0];
+  // tmp recevra la dérivée sous la formne p*value pow p-1
 }
 
-  values* resolution()
-{
-}
+} */
 }
 
 

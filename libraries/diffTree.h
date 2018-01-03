@@ -1,10 +1,10 @@
 namespace ourlibs{
 	class diffTree{
 	private:
-		diffTree* diff;
+		diffTree** diff;
 		values* values;
 		char ourOperator[4];
-                double power;
+                double n;
 	public:
 		//constructeur pour les 3 cas possibles
 		diffTree(diffTree, diffTree);
@@ -22,11 +22,7 @@ namespace ourlibs{
 		diffTree operator+(values);
 		diffTree operator+(diffTree&);
 
-		//fait la résolution du diff et supprime la référence vers le diff
-		//vérifie si le diff existe et le supprime après résolution
-		void replaceDiff(int, values);
 
-		//résous l'arborescence du difftree pui renvois les résultats sous la
 		//forme d'un objet values (@)
 		values* resolution();
 
