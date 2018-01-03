@@ -1,3 +1,4 @@
+#include "values.h"
 namespace ourlibs{
 	class diffTree{
 	private:
@@ -7,24 +8,32 @@ namespace ourlibs{
                 double n;
 	public:
 		//constructeur pour les 3 cas possibles
-		diffTree(diffTree, diffTree);
-		diffTree(values, diffTree);
-		diffTree(values, values);
-                diiffTree(diffTree, double);
-		diffTree~();
+		
+		//diffTree();
+		diffTree(diffTree*, diffTree*, char);
+		diffTree(values*, diffTree*, char);
+		diffTree(values*, values*, char);
+                diffTree(diffTree*, double, char);
+		diffTree(values*, double, char);
+		~diffTree();
 
+/*
 		//crée un difftree a partir de deux éléments
                 diffTree& operator=(diffTree&);
 		diffTree operator*(double);
 		diffTree operator*(values*);
 		diffTree operator*(diffTree*);
-		diffTree operator*(double);
-		diffTree operator+(values*);
-		diffTree operator+(diffTree*);
-
-
+		
 		//forme d'un objet values (@)
 		values* resolution();
 
 	};
+
+                diffTree operator*(double,diffTree*);
+		diffTree operator+(values*, diffTree*);
+		*/
+
 };
+}
+
+

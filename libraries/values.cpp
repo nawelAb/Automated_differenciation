@@ -1,4 +1,7 @@
+#ifndef DEF_VAL
 #include "values.h"
+#define DEF_VAL
+#endif
 
 namespace ourlibs{
 	
