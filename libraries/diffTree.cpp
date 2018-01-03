@@ -63,13 +63,13 @@ namespace ourlibs {
 }
   diffTree operator*(double n)
 {    
-    diffTree branche(this,n, "mul");
-     
+    diffTree branche(this,n, "mul");    
 }
   diffTree operator*(values* val1 )
 {
     diffTree branche(val1, this, "mul"); 
 }
+
   diffTree operator*(diffTree* d1)
 {
     diffTree branche(this, d1, "mul"); 

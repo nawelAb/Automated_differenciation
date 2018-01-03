@@ -1,8 +1,8 @@
 namespace ourlibs{
 	class diffTree{
 	private:
-		diffTree** diff;
-		values* values;
+		diffTree** tabdiff;
+		values* tabvalues;
 		char ourOperator[4];
                 double n;
 	public:
@@ -16,11 +16,11 @@ namespace ourlibs{
 		//crée un difftree a partir de deux éléments
                 diffTree& operator=(diffTree&);
 		diffTree operator*(double);
-		diffTree operator*(values);
-		diffTree operator*(diffTree&);
+		diffTree operator*(values*);
+		diffTree operator*(diffTree*);
 		diffTree operator*(double);
-		diffTree operator+(values);
-		diffTree operator+(diffTree&);
+		diffTree operator+(values*);
+		diffTree operator+(diffTree*);
 
 
 		//forme d'un objet values (@)
