@@ -1,5 +1,6 @@
 namespace ourlibs{
 <<<<<<< HEAD
+<<<<<<< HEAD
 	class values{
 	private:
 		double value;
@@ -8,19 +9,9 @@ namespace ourlibs{
 		//constructeur pour les 3 cas possibles
 		values(double,const std::size_t,const std::size_t);
 		diffTree~();
-
-		//crée un difftree a partir de deux éléments
-		values* operator*(double);
-		values* operator*(ourlibs::values*);
-		diffTree* operator*(ourlibs::diffTree*);
-
-		values* operator+(double);
-		values* operator+(ourlibs::values*);
-		diffTree* operator+(ourlibs::diffTree*);
-
-	};
-};
 =======
+>>>>>>> e1bcd730a6b8c008b62279a960dce92b00216d1f
+
 	
 	class values{
 	
@@ -42,24 +33,36 @@ namespace ourlibs{
 
 		double getvalue();
 		const int gettaille();
-		double values::gettabdiv( int i);
+		double gettabdiv( int i);
+		
+		//remplire (évité la recopie)
+		
+		double remplirval(double);
+		double remplirtab(double,int);
+		
 
 		
 		//crée un difftree a partir de deux éléments
 
 		values operator*(double);
-		//values* operator*(ourlibs::values*); on a pas besoin 
-		//diffTree* operator*(ourlibs::diffTree*); on a pas besoin 
-   		//values operator*(double a, ourlibs::values v); en bas
-
-		values* operator+(double);
-		values* operator+(ourlibs::values v);
-		//diffTree* operator+(ourlibs::diffTree*); on a pas besoin 
+		values operator+(double);
+		values operator+(values& v);
+		values operator-(double);
+		values operator-(values& v);
+		//diffTree* operator+(ourlibs::diffTree*); Lynda
+		//diffTree* operator*(ourlibs::diffTree*); Lynda
 
 	};
 
     
-    values operator*(double a, ourlibs::values v);
+
+	values operator*(double a, ourlibs::values v);
+	values operator-(double a, ourlibs::values v);
+	values operator+(double a, ourlibs::values v);
+
 
 }
+<<<<<<< HEAD
 >>>>>>> origin/b_hamza
+=======
+>>>>>>> e1bcd730a6b8c008b62279a960dce92b00216d1f
