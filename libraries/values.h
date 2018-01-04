@@ -21,19 +21,23 @@ namespace ourlibs{
 
 		double getvalue();
 		const int gettaille();
-		double values::gettabdiv( int i);
+		double gettabdiv( int i);
+		
+		//remplire (évité la recopie)
+		
+		double remplirval(double);
+		double remplirtab(double,int);
+		
 
 		
 		//crée un difftree a partir de deux éléments
 
 		values operator*(double);
+		values operator+(double);
+		values operator+(values& v);
+		//diffTree* operator+(ourlibs::diffTree*); Lynda
 		//values* operator*(ourlibs::values*); on a pas besoin 
-		//diffTree* operator*(ourlibs::diffTree*); on a pas besoin 
-   		//values operator*(double a, ourlibs::values v); en bas
-
-		values* operator+(double);
-		values* operator+(ourlibs::values v);
-		//diffTree* operator+(ourlibs::diffTree*); on a pas besoin 
+		//diffTree* operator*(ourlibs::diffTree*); Lynda
 
 	};
 
