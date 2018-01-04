@@ -43,7 +43,10 @@ namespace ourlibs{
 	};
 
     
+
 	values operator*(double a, ourlibs::values v);
 	values operator-(double a, ourlibs::values v);
-	
+	values operator+(double a, ourlibs::values v);
+
+
 }

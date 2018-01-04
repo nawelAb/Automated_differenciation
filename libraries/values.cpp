@@ -140,6 +140,7 @@ namespace ourlibs{
     	return tmp;
     }
     
+
      values operator-(double a, ourlibs::values v)
     {
     	values tmp( v.getvalue(), v.gettaille() ) ;
@@ -152,8 +153,18 @@ namespace ourlibs{
     	return tmp;
     }
     
-    
-    
 
+values operator+(double a, ourlibs::values v)
+   	{
+		values tmp( v.getvalue(), v.gettaille() ) ;
+    	tmp.remplirval(v.getvalue() + a);
+
+
+    	for (int i = 0; i < v.gettaille(); ++i)
+    	{
+    		tmp.remplirtab(a+v.gettabdiv(i),i);
+    	}
+    	return tmp;
+	}
 
 }
