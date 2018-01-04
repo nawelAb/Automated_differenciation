@@ -5,7 +5,7 @@ namespace ourlibs {
   diffTree::diffTree() 
 {   tabdiff = nullptr;
     tabvalues = nullptr;
-    ourOperator = "";
+    ourOperator = " ";
     n = 0.0;
 }
 
@@ -54,6 +54,7 @@ namespace ourlibs {
 {  delete diff[] diff;
    delete[] values;
 }
+/*
 //crée un difftree a partir de deux éléments
   diffTree& operator=(diffTree& d1)
 {      diff = d1.diff;
@@ -128,6 +129,7 @@ namespace ourlibs {
     break;
     } 
   }
+  */
 }
 
 

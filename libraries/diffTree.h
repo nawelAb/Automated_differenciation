@@ -1,15 +1,18 @@
 #include "values.h"
+#include <string>
+
 namespace ourlibs{
 	class diffTree{
 	private:
 		diffTree** tabdiff;
 		values* tabvalues;
-		char ourOperator[4];
-                double n;
+		std::string ourOperator;
+        double n;
 	public:
+		
 		//constructeur pour les 3 cas possibles
 		
-		//diffTree();
+		diffTree();
 		diffTree(diffTree*, diffTree*, char);
 		diffTree(values*, diffTree*, char);
 		diffTree(values*, values*, char);
