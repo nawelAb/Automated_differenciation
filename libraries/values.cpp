@@ -102,6 +102,30 @@ namespace ourlibs{
 	{
 		m_tabdiv[i]= a;
 	}
+	
+	values values::operator-(double a)
+		{
+				values tmp( m_v, m_size) ;
+		    	tmp.m_v = m_v - a;
+		    	for (int i = 0; i < m_size; ++i)
+				{
+					tmp.m_tabdiv[i] = m_tabdiv[i];
+				}
+		    	
+		    	return tmp;
+		}
+		
+		values values::operator-(values& v)
+	{
+		values tmp(m_v, m_size) ;
+		tmp.m_v = m_v - v.getvalue() ;
+		for (int i = 0; i < v.gettaille(); ++i)
+    	{
+    		tmp.m_tabdiv[i] = m_tabdiv[i] - v.gettabdiv(i);
+    	}
+    	return tmp;
+
+	}
 
 
    values operator*(double a, ourlibs::values v)
@@ -117,5 +141,30 @@ namespace ourlibs{
     }
     
 
+     values operator-(double a, ourlibs::values v)
+    {
+    	values tmp( v.getvalue(), v.gettaille() ) ;
+    	tmp.remplirval(v.getvalue() -a);
+
+    	for (int i = 0; i < v.gettaille(); ++i)
+    	{
+    		tmp.remplirtab(a-v.gettabdiv(i),i);
+    	}
+    	return tmp;
+    }
+    
+
+values operator+(double a, ourlibs::values v)
+   	{
+		values tmp( v.getvalue(), v.gettaille() ) ;
+    	tmp.remplirval(v.getvalue() + a);
+
+
+    	for (int i = 0; i < v.gettaille(); ++i)
+    	{
+    		tmp.remplirtab(a+v.gettabdiv(i),i);
+    	}
+    	return tmp;
+	}
 
 }

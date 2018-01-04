@@ -35,13 +35,18 @@ namespace ourlibs{
 		values operator*(double);
 		values operator+(double);
 		values operator+(values& v);
+		values operator-(double);
+		values operator-(values& v);
 		//diffTree* operator+(ourlibs::diffTree*); Lynda
-		//values* operator*(ourlibs::values*); on a pas besoin 
 		//diffTree* operator*(ourlibs::diffTree*); Lynda
 
 	};
 
     
-    values operator*(double a, ourlibs::values v);
+
+	values operator*(double a, ourlibs::values v);
+	values operator-(double a, ourlibs::values v);
+	values operator+(double a, ourlibs::values v);
+
 
 }
