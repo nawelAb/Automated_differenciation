@@ -6,34 +6,52 @@ namespace ourlibs{
 	private:
 		diffTree** tabdiff;
 		values* tabvalues;
-		std::string ourOperator;
+		char ourOperator;
         double n;
 	public:
 		
 		//constructeur pour les 3 cas possibles
 		
 		diffTree();
-		diffTree(diffTree*, diffTree*, char);
-		diffTree(values*, diffTree*, char);
-		diffTree(values*, values*, char);
-                diffTree(diffTree*, double, char);
-		diffTree(values*, double, char);
+		diffTree(diffTree* d1, diffTree* d2, char op);
+		diffTree(values val1, diffTree* d1, char op);
+		diffTree(diffTree* d1, double s, char op );
+		diffTree(values val1, double s, char op );
 		~diffTree();
+		
 
-/*
+
 		//crée un difftree a partir de deux éléments
-                diffTree& operator=(diffTree&);
-		diffTree operator*(double);
-		diffTree operator*(values*);
-		diffTree operator*(diffTree*);
+		diffTree operator*(double s);
+		diffTree operator*(values val1 );
+		diffTree operator*(diffTree* d1);
+		diffTree operator+(values val1);
+		diffTree operator+(diffTree* d1);/*
+		diffTree operator+(double s);
+		diffTree operator-(values val1);
+		diffTree operator-(diffTree* d1);
+		diffTree operator-(double s);
+
+		diffTree puissance(diffTree, double s);
+
+{
+
 		
 		//forme d'un objet values (@)
 		values* resolution();
 
 	};
 
-                diffTree operator*(double,diffTree*);
-		diffTree operator+(values*, diffTree*);
+        diffTree operator*(double,diffTree*);
+		diffTree operator*(values val1, diffTree* );
+
+		diffTree operator+(values val1, diffTree*);
+		diffTree operator+(double s, diffTree*);
+
+		diffTree operator-(values val1, diffTree*);
+		diffTree operator-(double s, diffTree*);
+
+
 		*/
 
 };
