@@ -1,3 +1,5 @@
+#pragma once
+
 namespace ourlibs{
 
 	
@@ -11,6 +13,7 @@ namespace ourlibs{
 		
 	public:
 		//constructeur et déstructeur
+		values();
 		values(double  , int ,int);
 		values(double  , int );
 		

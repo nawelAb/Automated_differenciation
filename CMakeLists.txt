@@ -9,7 +9,7 @@ add_subdirectory (libraries)
 
 #executable(s)
 
-add_executable(main.exe main.cpp)
+add_executable(main main.cpp)
 
-#target_link_libraries(main values diffTree)
+target_link_libraries(main libraries)
 
