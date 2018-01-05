@@ -42,17 +42,17 @@ namespace ourlibs{
 */
 	};
 
-        diffTree operator*(diffTree* d1, double s);
-/*		diffTree operator*(values val1, diffTree* );
+        diffTree operator*(double s, diffTree d1 ); 
+		diffTree operator*(values val1, diffTree* d1 );
 
-		diffTree operator+(values val1, diffTree*);
-		diffTree operator+(double s, diffTree*);
+		diffTree operator+(values val1, diffTree* d1);
+		diffTree operator+(double s, diffTree d1); 
 
-		diffTree operator-(values val1, diffTree*);
-		diffTree operator-(double s, diffTree*);
+		diffTree operator-(values val1, diffTree* d1);
+		diffTree operator-(double s, diffTree d1); 
 
 
-*/
+
 
 }
 

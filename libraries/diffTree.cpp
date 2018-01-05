@@ -112,10 +112,36 @@ diffTree diffTree::puissance(values val1, double s)
 }
 
 
-diffTree operator*(double s, difftree* d1)
-{    
-    diffTree branche(d1,s, 'm');    
+
+diffTree operator*(double s, diffTree d1 )   
+{
+    diffTree branche(&d1, s, 'm'); 
 }
+
+diffTree operator*(values val1, diffTree* d1 )
+{
+    diffTree branche(val1, d1, 'm'); 
+}
+
+diffTree operator+(values val1, diffTree* d1)
+{
+    diffTree branche(val1, d1, 'a');
+}
+diffTree operator+(double s, diffTree d1)  
+{
+    diffTree branche(&d1, s, 'a'); 
+}
+
+diffTree operator-(values val1, diffTree* d1)
+{
+    diffTree branche(val1, d1, 's'); 
+}
+diffTree operator-(double s, diffTree d1)
+{
+    diffTree branche(&d1, s, 's'); 
+
+}
+
 /*
  void replaceDiff(int, values)
 {
