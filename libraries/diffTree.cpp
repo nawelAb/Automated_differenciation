@@ -1,4 +1,3 @@
-
 #include "diffTree.h"
 #include "values.h" 
 
@@ -142,7 +141,7 @@ diffTree operator-(double s, diffTree d1)
 
 }
 
-void replaceDiff(int, values){]}
+void replaceDiff(int, values){}
 
 
 // arbre de résolution recursive 
