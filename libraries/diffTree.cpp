@@ -89,6 +89,33 @@ namespace ourlibs {
 {
     diffTree branche(this, d1, 'a'); 
 }
+diffTree diffTree::operator+(double s)
+{
+    diffTree branche(this, s, 'a'); 
+}
+diffTree diffTree::operator-(values val1)
+{
+    diffTree branche(val1, this, 's'); 
+}
+ diffTree diffTree::operator-(diffTree* d1)
+{
+    diffTree branche(this, d1, 's'); 
+}
+diffTree diffTree::operator-(double s)
+{
+    diffTree branche(this, s, 's'); 
+}
+
+diffTree diffTree::puissance(values val1, double s)
+{
+    diffTree branche(val1, s, 'p'); 
+}
+
+
+diffTree operator*(double s, difftree* d1)
+{    
+    diffTree branche(d1,s, 'm');    
+}
 /*
  void replaceDiff(int, values)
 {

@@ -26,24 +26,24 @@ namespace ourlibs{
 		diffTree operator*(values val1 );
 		diffTree operator*(diffTree* d1);
 		diffTree operator+(values val1);
-		diffTree operator+(diffTree* d1);/*
+		diffTree operator+(diffTree* d1);
 		diffTree operator+(double s);
 		diffTree operator-(values val1);
 		diffTree operator-(diffTree* d1);
 		diffTree operator-(double s);
 
-		diffTree puissance(diffTree, double s);
+		diffTree puissance(values val1, double s);
 
-{
+/*
 
 		
 		//forme d'un objet values (@)
 		values* resolution();
-
+*/
 	};
 
-        diffTree operator*(double,diffTree*);
-		diffTree operator*(values val1, diffTree* );
+        diffTree operator*(diffTree* d1, double s);
+/*		diffTree operator*(values val1, diffTree* );
 
 		diffTree operator+(values val1, diffTree*);
 		diffTree operator+(double s, diffTree*);
@@ -52,9 +52,8 @@ namespace ourlibs{
 		diffTree operator-(double s, diffTree*);
 
 
-		*/
+*/
 
-};
 }
 
 
