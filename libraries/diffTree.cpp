@@ -1,4 +1,3 @@
-
 #include "diffTree.h"
 #include "values.h" 
 
@@ -142,52 +141,62 @@ diffTree operator-(double s, diffTree d1)
 
 }
 
-/*
- void replaceDiff(int, values)
-{
-}
+void replaceDiff(int, values){}
 
-    values* resolution() {   // arbre de résolution recursive 
-   
-  	if(diff[0] != nullptr) 
-      diff[0].resolution(); 
 
-    if(diff[1] != nullptr) 
-      diff[1].resolution();
+// arbre de résolution recursive 
+values* resolution() {   
+  if(tabdiff[0] != nullptr) 
+    tabdiff[0].resolution(); 
 
- 
-    swicth (ourOperator) : 
-    case ("pow") : {
-      // l entier de la classe diffTree est considéré 
-      //comme une puissance 
-      values tmp = values(m_tabdiv[0].size()) ; // cree un objet tmp 
-     // power  *  x puissance (power - 1)
-      tmp.values = m_tabdiv[0];
-    // vérif du contenu de values pour voire si 
-    //il faut faire appel au opérations values
-     
+  if(tabdiff[1] != nullptr) 
+    tabdiff[1].resolution();
 
-    break;
-    } 
-
-    case ("mul") : {
-      values tmp = values(m_tabdiv[1].size()) ;  
-      tmp.values = m_tabdiv[1];
-
-    break;
-    } 
-
+  tab_size = tabvalues[0].size();
+    
+  swicth (ourOperator) :   
     case ("add") : {
-      values tmp = values(m_tabdiv[1].size()) ;  
-      tmp.m_tabdiv = m_tabdiv[1]; // result 
+     
+      values tmp = values(tab_size) ;  
+      tmp = tabvalues[0] + tabvalues[1] ;
+      return tmp;
+      break;
+    }
 
+    case ("sub") : {
+
+      values tmp = values(tab_size) ;  
+      tmp = tabvalues[0] - tabvalues[1] ;
+      return tmp;       
+      break;
+    } 
+
+    case ("pow") : {
+    // le double du diffTree est considéré comme une puissance 
+    // power  *  x puissance (power - 1)
+    values tmp = values(tab_size) ; 
+    if (this.n == 0)
+      tmp.tabvalues = 1;
+    tmp.tabvalues = n * std::pow(tabvalues[0], n-1);
+    
+    return tmp;
     break;
     } 
+
+    case ("mul") : {        
+      
+      values tmp    = values(tab_size) ; 
+      
+      // diff & double 
+      if(this.n != 0 )
+          tmp.tabvalues = n * tabvalues[0] + n *tabvalues[1] ;      
+
+      //return tmp; 
+    break;
+    }     
   }
-  */
+  
 }
-
-
 
 
 
