@@ -74,84 +74,84 @@ namespace ourlibs {
 
 		diffTree diffTree::operator*(double s)
 		{    
-    		diffTree branche(this,s, 'm');    
+    		diffTree branche(this,s, 'mul');    
 		}
 
 		diffTree diffTree::operator*(values val1 )
 		{
-			diffTree branche(val1, this, 'm'); 
+			diffTree branche(val1, this, 'mul'); 
 		}
 
   		diffTree diffTree::operator*(diffTree* d1)
 		{
-			diffTree branche(this, d1, 'm'); 
+			diffTree branche(this, d1, 'mul'); 
 		}
 
 		diffTree diffTree::operator+(values val1)
 		{
-    		diffTree branche(val1, this, 'a');
+    		diffTree branche(val1, this, 'add');
 		}
 		
   		diffTree diffTree::operator+(diffTree* d1)
 		{
-    		diffTree branche(this, d1, 'a'); 
+    		diffTree branche(this, d1, 'add'); 
 		}
 		
 		diffTree diffTree::operator+(double s)
 		{
-    		diffTree branche(this, s, 'a'); 
+    		diffTree branche(this, s, 'add'); 
 		}
 			
 		diffTree diffTree::operator-(values val1)
 		{
-		    diffTree branche(val1, this, 's'); 
+		    diffTree branche(val1, this, 'sub'); 
 		}
 		
  		diffTree diffTree::operator-(diffTree* d1)
 		{
-    		diffTree branche(this, d1, 's'); 
+    		diffTree branche(this, d1, 'sub'); 
 		}
 		
 		diffTree diffTree::operator-(double s)
 		{
-    		diffTree branche(this, s, 's'); 
+    		diffTree branche(this, s, 'sub'); 
 		}
 
 		diffTree diffTree::puissance(values val1, double s)
 		{
-    		diffTree branche(val1, s, 'p'); 
+    		diffTree branche(val1, s, 'pow'); 
 		}
 
 
 
 		diffTree operator*(double s, diffTree d1 )   
 		{
-    		diffTree branche(&d1, s, 'm'); 
+    		diffTree branche(&d1, s, 'mul'); 
 		}
 
 		diffTree operator*(values val1, diffTree* d1 )
 		{
-    		diffTree branche(val1, d1, 'm'); 
+    		diffTree branche(val1, d1, 'mul'); 
 		}
 
 		diffTree operator+(values val1, diffTree* d1)
 		{
-    		diffTree branche(val1, d1, 'a');
+    		diffTree branche(val1, d1, 'add');
 		}
 		
 		diffTree operator+(double s, diffTree d1)  
 		{
-    		diffTree branche(&d1, s, 'a'); 
+    		diffTree branche(&d1, s, 'add'); 
 		}
 
 		diffTree operator-(values val1, diffTree* d1)
 		{	
-	    	diffTree branche(val1, d1, 's'); 
+	    	diffTree branche(val1, d1, 'sub'); 
 		}
 		
 		diffTree operator-(double s, diffTree d1)
 		{
-    		diffTree branche(&d1, s, 's'); 
+    		diffTree branche(&d1, s, 'sub'); 
 		}
 
 		void replaceDiff(int, values){}

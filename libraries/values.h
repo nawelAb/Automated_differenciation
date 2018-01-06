@@ -1,6 +1,4 @@
 namespace ourlibs{
-<<<<<<< HEAD
-<<<<<<< HEAD
 	class values{
 	private:
 		double value;
@@ -9,8 +7,6 @@ namespace ourlibs{
 		//constructeur pour les 3 cas possibles
 		values(double,const std::size_t,const std::size_t);
 		diffTree~();
-=======
->>>>>>> e1bcd730a6b8c008b62279a960dce92b00216d1f
 
 	
 	class values{
@@ -62,7 +58,4 @@ namespace ourlibs{
 
 
 }
-<<<<<<< HEAD
->>>>>>> origin/b_hamza
-=======
->>>>>>> e1bcd730a6b8c008b62279a960dce92b00216d1f
+}
