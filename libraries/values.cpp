@@ -1,8 +1,18 @@
+#ifndef DEF_VAL
 #include "values.h"
+#define DEF_VAL
+#endif
 
 namespace ourlibs{
 	
 	//constructeur
+	values::values()
+	{
+	m_v=0;
+	m_size=0;
+	m_tabdiv= nullptr ;
+	}
+
 	values::values(double a ,int b , int p)
 	{
 	m_v=a;

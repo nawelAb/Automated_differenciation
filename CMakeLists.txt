@@ -9,9 +9,10 @@ add_subdirectory (libraries)
 
 #executable(s)
 
-add_executable(main.exe main.cpp)
+
+#add_executable(main.exe main.cpp)
 add_executable(diffTree.exe libraries/diffTree.cpp)
 add_executable(values.exe libraries/values.cpp)
-
-#target_link_libraries(main values diffTree)
+add_executable(source.exe source.cpp)
+target_link_libraries(source libraries)
 
