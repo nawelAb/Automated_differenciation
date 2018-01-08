@@ -1,13 +1,4 @@
 namespace ourlibs{
-	class values{
-	private:
-		double value;
-		double* tabvalues;
-	public:
-		//constructeur pour les 3 cas possibles
-		values(double,const std::size_t,const std::size_t);
-		diffTree~();
-
 	
 	class values{
 	
@@ -58,4 +49,4 @@ namespace ourlibs{
 
 
 }
-}
+
