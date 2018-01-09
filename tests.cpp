@@ -6,8 +6,8 @@ int main(void)
 {
 // creation de deux vecteurs a et b
 
-  ad::vector a =ad::vector( /* v */ 3.14, 3,1 ); // v est la valeur de a et dv c'est la valeur de la dérivé par rapport aux autres var
-  ad::vector b =ad::vector( /* v */ 1., 3,2 ); // mm chose !
+  ad::ad_value a =ad::ad_value( /* v */ 3.14, 3,1 ); // v est la valeur de a et dv c'est la valeur de la dérivé par rapport aux autres var
+  ad::ad_value b =ad::ad_value( /* v */ 1., 3,2 ); // mm chose !
 
 // tests avec plusieurs fonctions complexes
 
