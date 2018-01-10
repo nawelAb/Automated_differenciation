@@ -21,10 +21,10 @@ Il contient:
 	    cas il s'agit Makefile.
 	    En ce qui concerne le fichier CMakeList.txt, il est indépendant
 	    de la plateforme, on décrit à l'intérieur comment on s'y prend pour
-	    compiler le projet à l'aide des information comme : le languge 
+	    compiler le projet à l'aide des informations comme : le language 
 	    utilisé, les fichiers à compiler, les dépendances (externes 
 	    ou comme sous-projet). Conséquemment, Cmake va pouvoir nous générer
-	    le script de compilation adequat pour le projet.
+	    le script de compilation adéquat pour le projet.
 
 
 	2-la librairie du projet.
