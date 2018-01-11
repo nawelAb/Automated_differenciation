@@ -8,6 +8,16 @@ Il contient:
 
 
     1-les commandes à lancer pour compiler et lancer le programme.
+    
+        la commande pour compiler et lancer le programme est:
+        
+        Automated_differenciation/build$ cmake ..
+        Automated_differenciation/build$ make
+        Automated_differenciation/build$ ./main
+        
+        la commande pour Doxygen est:
+        
+        Automated_differenciation$ doxygen doxConfig
 
 	    On a utilisé comme outils de compilation CMake (version 3.5.1), de ce fait,  
 	    ainsi est le modèle pour notre cas de compilation est :
