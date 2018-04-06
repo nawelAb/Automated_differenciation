@@ -1,4 +1,5 @@
 #include <assert.h>
+#include <omp.h>
 
 /** \file libs.h
  * Ce fichier contient la totalite des classes et structures necessaires 
@@ -36,6 +37,7 @@ namespace ad
 			v=a;
 			n=b;
 			dv=new double[n];
+			#pragma omp parallel for
 			for (int i=0; i<n; i++)
 			{
 				if(i == p-1)

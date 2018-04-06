@@ -1,9 +1,33 @@
 #include <iostream>
 #include <math.h>
+#include <mpi.h>
 #include "libs.h"
+
 
 int main(void)
 {
+int rk, jeton, tag1;
+    MPI_Status sta;
+
+    MPI_Init(&argc, &argv);
+
+    MPI_Comm_rank(MPI_COMM_WORLD, &rk);
+
+    tag1 = 1000;
+    if (rk == 0)
+    {
+        jeton = 10;
+        MPI_Send(&jeton, 1, MPI_INT, 1, tag1, MPI_COMM_WORLD);
+    }
+    else if (rk == 1)
+    {
+        MPI_Recv(&jeton, 1, MPI_INT, 0, tag1, MPI_COMM_WORLD, &sta);
+
+        printf("Je suis P%d et j'ai recu la valeur %d\n", rk, jeton);
+    }
+
+    MPI_Finalize();
+
 // creation de deux vecteurs a et b
 
   ad::ad_value a =ad::ad_value( /* v */ 3.14, 3,1 ); // v est la valeur de a et dv c'est la valeur de la dérivé par rapport aux autres var
