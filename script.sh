@@ -9,6 +9,6 @@
 #@ job_type         = mpich
 #@ queue
 #
-export OMP_NUM_THREAD=4
+export OMP_NUM_THREAD=16
 module load gnu-env/5.4.0
 ./build/main
