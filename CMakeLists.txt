@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 #set(DCMAKE_CXX_COMPILER mpicxx)
 #set(DCMAKE_CC_COMPILER mpicc)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
-
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O0")
 set(Automated_Diferenciation_VERSION_MAJOR 1)
 set(Automated_Diferenciation_VERSION_MINOR 0)
 

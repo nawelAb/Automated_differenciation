@@ -1,5 +1,6 @@
 #include <assert.h>
 #include <omp.h>
+#include <emmintrin.h>
 
 /** \file libs.h
  * Ce fichier contient la totalite des classes et structures necessaires 
@@ -113,6 +114,7 @@ namespace ad
 		 * \param dleft : valeur de la derivee de l'objet à gauche de l'operateur
 		 * \param dright : valeur de la derivee de l'objet à droite de l'operateur
 		 */
+		//inline static auto gradient(double left, __m256d dleft, double right, __m256d
 		inline static auto gradient(double left, double dleft, double right, double dright)
 		{
 			return dleft * right + left * dright;
@@ -527,3 +529,4 @@ namespace ad
 	  	return binop<E1, double, expo>(left,0.); 
 	}
 }
+

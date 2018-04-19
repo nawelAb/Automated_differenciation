@@ -1,17 +1,35 @@
 #include <iostream>
 #include <math.h>
 #include "libs.h"
+#include <emmintrin.h>
+#include <ctime>
 
+void normal(float* a, int N)                                                                                                                                                                                     
+{                                                                                                                                                                                                                
+  for (int i = 0; i < N; ++i)                                                                                                                                                                                    
+    a[i] = sqrt(a[i]);                                                                                                                                                                                           
+}                                                                                                                                                                                                                
+ 
+void sse(float* a, int N)                                                                                                                                                                                        
+{                      
+  // We assume N % 4 == 0.                                                                                                                                                                                        
+  int nb_iters = N / 4;                                                                                                                                                                                         
+  __m128* ptr = (__m128*)a;                                                                                                                                                                                      
+ 
+  for (int i = 0; i < nb_iters; ++i, ++ptr, a += 4)                                                                                                                                                              
+    _mm_store_ps(a, _mm_sqrt_ps(*ptr));                                                                                                                                                                          
+}
 
 int main(void)
 {
+
 // creation de deux vecteurs a et b
 
-  ad::ad_value a =ad::ad_value( /* v */ 3.14, 3,1 ); // v est la valeur de a et dv c'est la valeur de la dérivé par rapport aux autres var
-  ad::ad_value b =ad::ad_value( /* v */ 1., 3,2 ); // mm chose !
+  //ad::ad_value a =ad::ad_value( /* v */ 3.14, 3,1 ); // v est la valeur de a et dv c'est la valeur de la dérivé par rapport aux autres var
+  //ad::ad_value b =ad::ad_value( /* v */ 1., 3,2 ); // mm chose !
 
 // tests avec plusieurs fonctions complexes
-
+/*
   auto expr11 = ad::puis(ad::exp(ad::sin(a)),0.5);
   auto expr12 = 3.0*ad::puis(a,2.)-b;
   auto expr13 = 2.0*b-a;
@@ -201,5 +219,58 @@ int main(void)
   std::cout << exprt13.gradient(0) << std::endl; // derivé de expr /a
   std::cout << exprt13.gradient(1) << std::endl; // derivé de expr /b
   std::cout << exprt13.gradient(2) << std::endl<< std::endl; // derivé de expr /c
+*/
+
+  // Vous pouvez remplacer par une fonction plus compliquée
+  // avec des cos, exp, etc. Attention de bien connaitre le
+  // minimum toutefois :)
+    //for(int iter=0;iter<1000000;iter++){
+      //  ad::ad_value a=ad::ad_value( /* v */ (double)iter, 120,1 );
+        //auto expr=a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a+a; 
+       
+        /*
+        std::cout << "1/a" << std::endl;
+        std::cout << expr.value() << std::endl;
+        std::cout << expr.gradient(0) << std::endl; // derivé de expr /a
+        std::cout << expr.gradient(1) << std::endl; // derivé de expr /b
+        std::cout << expr.gradient(2) << std::endl<< std::endl; // derivé de
+         expr /c   
+        //*/
+    
+    }
+     
+  int N = 55222365;                                                     
+ 
+  float* a;                        
+  posix_memalign((void**)&a, 16,  N * sizeof(float));
+ 
+  for (int i = 0; i < N; ++i)
+    a[i] = 3141592.65358;
+  {
+    std::clock_t topstart;
+    double duration;
+    topstart = std::clock();
+
+    normal(a, N);
+                             
+
+duration = ( std::clock() - topstart ) / (double) CLOCKS_PER_SEC;
+
+    std::cout<<"printf: "<< duration <<'\n';
+                                                                                                                                                                                  
+ }
+  for (int i = 0; i < N; ++i)
+    {
+        a[i] = 3141592.65358;
+        std::clock_t start1;ui
+        double duration1;
+        start1 = std::clock();
+        sse(a, N);
+        duration1 = ( std::clock() - start1 ) / (double) CLOCKS_PER_SEC;
+
+        std::cout<<"printf: "<< duration1 <<'\n';
+    }
+    return 0;
+
 }
 
