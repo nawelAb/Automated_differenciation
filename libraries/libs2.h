@@ -37,6 +37,9 @@ namespace ad2
 		inline ad_value(float a,int b, int p){
 			v=new float[4];
 			n=b;
+			if(b%4!=0){
+				n+=(4-b%4);
+			}
 			dv=new float[n];
 			#pragma omp parallel for
 			for (int i=0; i<n; i++)
@@ -136,10 +139,13 @@ namespace ad2
 			__m128* ptrrv = (__m128*)right;
 
 			float* dv = new float[52];
+			#pragma omp parrallel for
 			for (int i=0; i<13; ++i,++ptrl, ++ptrr)
 			{
  			_mm_store_ps(dv+4*i,  _mm_add_ps ( _mm_mul_ps(*ptrrv,*ptrl),_mm_mul_ps(*ptrlv,*ptrr)));
 			}
+			//std::cout<< "result[0] = "<< dv[0] << std::endl;
+
 			return  dv;
 		}
 	};
@@ -180,7 +186,7 @@ namespace ad2
 			__m128* ptrlv = (__m128*)left;
 			__m128* ptrrv = (__m128*)right;
 			float* dv = new float[52];
-			
+			#pragma omp parrallel for
 			for (int i=0; i<13; ++i,++ptrl, ++ptrr)
 			{
  			_mm_store_ps(dv+4*i, _mm_div_ps( _mm_sub_ps ( _mm_mul_ps(*ptrrv,*ptrl),_mm_mul_ps(*ptrlv,*ptrr)),_mm_mul_ps(*ptrr,*ptrl)));
@@ -221,9 +227,9 @@ namespace ad2
 		{
 			__m128* ptrl = (__m128*)dleft;
 			__m128* ptrr = (__m128*)dright;
-			float* dv = new float[1000];
+			float* dv = new float[52];
 			#pragma omp parrallel for
-			for (int i=0; i<250; ++i,++ptrl, ++ptrr)
+			for (int i=0; i<13; ++i,++ptrl, ++ptrr)
 			{
  			_mm_store_ps(dv+4*i,  _mm_add_ps ( *ptrl, *ptrr)); 			
 			}
@@ -265,6 +271,7 @@ namespace ad2
 			__m128* ptrl = (__m128*)dleft;
 			__m128* ptrr = (__m128*)dright;
 			float* dv = new float[52];
+			#pragma omp parrallel for
  			for (int i=0; i<13; ++i,++ptrl, ++ptrr)
 			{
 			_mm_store_ps(dv+4*i,  _mm_sub_ps ( *ptrl, *ptrr));

@@ -236,7 +236,7 @@ int main(void)
         vals[i]=ad2::ad_value( /* v */ 3.14, nb_values,i );
     }
     
-    auto expr=vals[0]+vals[1]+vals[2]+vals[3]+vals[4]+vals[5]+vals[6]+vals[7]+vals[8]+vals[9]+vals[10]+vals[11]+vals[12]+vals[13]+vals[14]+vals[15]+vals[16]+vals[17]+vals[18]+vals[19]+vals[20]+vals[21]+vals[22]+vals[23]+vals[24]+vals[25]+vals[26]+vals[27]+vals[28]+vals[29]+vals[30]+vals[31]+vals[32]+vals[33]+vals[34]+vals[35]+vals[36]+vals[37]+vals[38]+vals[39]+vals[40]+vals[41]+vals[42]+vals[43]+vals[44]+vals[45]+vals[46]+vals[47]+vals[48]+vals[49];
+    auto expr=vals[0]*vals[1]*vals[2]*vals[3]*vals[4]*vals[5]*vals[6]*vals[7]*vals[8]*vals[9]*vals[10]*vals[11]*vals[12]*vals[13]*vals[14]*vals[15]*vals[16]*vals[17]*vals[18]*vals[19]*vals[20]*vals[21]*vals[22]*vals[23]*vals[24]*vals[25]*vals[26]*vals[27]*vals[28]*vals[29]*vals[30]*vals[31]*vals[32]*vals[33]*vals[34]*vals[35]*vals[36]*vals[37]*vals[38]*vals[39]*vals[40]*vals[41]*vals[42]*vals[43]*vals[44]*vals[45]*vals[46]*vals[47]*vals[48]*vals[49];
     double duration2;
     std::clock_t start2;
     duration2=0;
@@ -246,6 +246,7 @@ int main(void)
         expr.gradient();
     }
     duration2 += ( std::clock() - start2 ) ;
+
 
     std::cout<<"printf: "<< duration2 / (double) CLOCKS_PER_SEC <<'\n';
      /*                  
