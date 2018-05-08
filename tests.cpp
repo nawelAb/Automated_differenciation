@@ -62,7 +62,7 @@ int main(void)
   auto exprt12 = 1. / a;
   auto exprt13 = a / 1.;
 
-//impression des rédultats
+//impression des résultats
     /*
   std::cout << "puis(exp(sin(a)),0.5)" << std::endl;
   std::cout << expr11.value() << std::endl;
@@ -248,7 +248,7 @@ int main(void)
     duration2 += ( std::clock() - start2 ) ;
 
 
-    std::cout<<"printf: "<< duration2 / (double) CLOCKS_PER_SEC <<'\n';
+    //std::cout<<"printf: "<< duration2 / (double) CLOCKS_PER_SEC <<'\n';
      /*                  
  
   float* a;                        

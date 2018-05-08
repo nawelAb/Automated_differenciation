@@ -144,7 +144,6 @@ namespace ad2
 			{
  			_mm_store_ps(dv+4*i,  _mm_add_ps ( _mm_mul_ps(*ptrrv,*ptrl),_mm_mul_ps(*ptrlv,*ptrr)));
 			}
-			//std::cout<< "result[0] = "<< dv[0] << std::endl;
 
 			return  dv;
 		}
@@ -234,7 +233,6 @@ namespace ad2
  			_mm_store_ps(dv+4*i,  _mm_add_ps ( *ptrl, *ptrr)); 			
 			}
 
- 			//std::cout<<"la valeur est " << dv[0] << std::endl;
 			return  dv;		
 		}
 	};
